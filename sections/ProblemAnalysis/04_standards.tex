@@ -1,0 +1,59 @@
+\chapter{Standards}\label{ch:Standards}
+%intro 
+Before a robot can interact with humans, it must adhere to some standards. These standards are rules and regulations, on different matters, that pertain to how a robot must act. For a robot that has to interact with people, it should adhere to the International Organization for Standardization (ISO) 13842 \cite{ISO13842}. ISO 13842 is related to mobile servant, physical assistant and personal caring robots. Furthermore, the ISO 13842 contain definitions on what trivial words like \textit{shall}, \textit{should}, \textit{may} or \textit{can} should mean in a robotic context. These words can be translated into \textit{requirements}, \textit{recommendations}, \textit{permission} and \textit{possibility/capability}, respectively. Moreover, this ISO 13842 is a type-c, meaning the standards in this ISO takes precedence over standards that are in a type-a and type-b. Type-a are basic safety related standards, type-b are generic safety related standards and type-c are machine safety related standards\cite{TYPEABC}.\\
+\\
+The first step is to determine the hazardous situations that can occur. This depends on the environment that the robot has to work within and the type of robot that is being implemented. Loss of power is a potential hazard, since the robot could injure persons if it is not able to stand upright without power. This could lead to potential hazardous situations, where there is a risk of the robot injuring a person or a safety related object (domestic animals and property). The hazards are described as \textit{The nature of the robots application}\cite{ISO13842} and the risks are defined as \textit{combination of probability of occurrence of harm and the severity of harm}\cite{ISO13842}.\\
+The ISO 13842 is comprised of multiple subsections, that deals with different safety areas within this standard, here some of these subsections will be discussed.\\
+\\
+%useful paragraphs for HRI.
+\paragraph{Risk assessment}\label{secsub:RiskAss}
+Besides adhering the requirements from the aforementioned standard, robots in development also should to adhere the standards from ISO 12100. In the ISO 12100 there can also be found guide lines on how to do risk assessment\cite{ISO13842}, a more detailed description can be located in chapter 4 in ISO 13842\cite{ISO13842}.\\
+The need for identifying the hazards surrounding the robot is the foundation for building a safe robot that can work around people. ISO 13842 describes a series of aspects to take into consideration such as: 
+\begin{itemize}
+    \item The level of knowledge, experience and physical
+    condition of the person.
+    \item From normal and unexpected movement of robot to unintended movement of the robot.
+    \item Handling the uncertainty of safety-related objects.
+    \item The uncertainty of a bad decision made autonomously and the possible consequence.
+\end{itemize}
+
+These considerations will be used in a risk estimation. One method is to map the possible given events and asses how much risk, if any, in a given situation. Assessing the risks of a robotic solution to be used in interaction with humans must take into consideration two aspects. These are the safety requirements and protective measures along with safety-related control system requirements. These aspects are described in the following two paragraphs.
+
+\paragraph{Safety requirements and protective measures}\label{secsub:SafetyReq}
+
+When the aforementioned hazards and risk are establish for the robot and the working environment, there is a need to design the robot so the risks are reduced or eliminated. This subsection is pertaining this risk reduction of the robot by the design. This can be done through safeguarding measures. beneath are some of the hazards that can require a protective measures against:
+\begin{itemize}
+    \item Charging the batteries
+    \item Energy storage and supply
+    \item Robots boot routine and reboot
+    \item Risk of electrostatic
+    \item The robot's shapes
+    \item The robot's motion
+    \item Wrong autonomous conclusion and actions
+    \item Contact with moving components on the robot
+    \item Lack of awareness of robots by humans
+\end{itemize}
+
+All the aspects of requirements has to be evaluated, to ensure a sufficient implementation of protective measures internally as-well as externally, more details on safety and requirements can be found in chapter 5 of ISO 13842.\cite{ISO13842}\\
+
+
+
+\paragraph{Safety-related control system requirements}\label{secsub:SafetyRelated}
+When the needed protective measures are implemented by a control system the requirements of clause 6 in ISO 13842 must apply. The required performance level of the control system must be determined by a risk assessment and shall conform to ISO 13849-1.\\
+\\
+Clause 6 of ISO 13842 states that if any of the following functions are implemented for risk reduction, each function must have a performance level defined, unless explicitly stated in the user documentation that other levels of safety apply for a specific application.
+The list of applicable functions are as follows:
+\begin{itemize}
+    \item Emergency stop
+    \item Protective stop
+    \item Limits to workspace
+    \item Safety-related speed control
+    \item Safety-related force control
+    \item Hazardous collision avoidance
+    \item Stability control (including overload protection)
+\end{itemize}
+
+If these aspects are implemented in the control system they must be implemented according to the aforementioned robot types. More information on control system requirements is located in chapter 6 of ISO 13842.\cite{ISO13842}\\
+
+%tail
+In addition to the aspects needed to assess the risk when developing a robot solution for use in an social context with humans, the ISO 13482 also contains a section on how to validate and test the setup of the robot and a section on what shall be include in a user manual.

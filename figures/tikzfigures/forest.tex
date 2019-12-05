@@ -1,0 +1,17 @@
+\begin{figure}[H]
+ \centering
+\begin{tikzpicture}[
+roundnode/.style={circle, draw=green!60, fill=green!5, very thick, minimum size=7mm},
+squarednode/.style={rectangle, draw=red!60, fill=red!5, very thick, minimum size=5mm},
+]
+%Nodes
+\node[squarednode]      (maintopic)                              {Must have a good and easy interface};
+\node[roundnode]        (uppercircle)       [above=of maintopic] {HRI};
+\node[squarednode]      (rightsquare1)       [below=of maintopic] {Must be usable within 1 minute};
+\node[squarednode]      (rightsquare2)       [below=of rightsquare1] {Must be usable within 1 minute};
+%Lines
+\draw[->] (uppercircle.south) -- (maintopic.north);
+\draw[->] (maintopic.south) -- (rightsquare1.north);
+\draw[->] (rightsquare1.south) -- (rightsquare2.north);
+\end{tikzpicture}
+\end{figure}

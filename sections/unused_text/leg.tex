@@ -1,0 +1,12 @@
+%The mean angular distance is the distance between the legs that can be used to determine whether or not the legs should be paired. The distance should be between 20-50 cm. 
+%The leg detector then pushes the results of the feature extraction back, so it may be used in the other algorithms.\\
+
+%Train
+%These features are then used as training data in the training algorithm, where it classifies the data of the image as, positive or negative. It also includes testing, where it will run through the trained data to see if the algorithm has been trained correctly, to check for the different features.\\
+%However if there is no clusters to be read the "Scanmask" function will be run, to reduce the computational power, and avoid the feature extraction and training to run without any clusters. This function is a part of the algorithm "Scan processor".The scan processor extracts the messages over the scan topic and index' them, so that the wanted point clouds can be located. The indexing is then put into the array "S". The "Scanmask" then uses "S" to point to a new sample-set that is used to delete the point cloud in "S" if it is NULL. Then it takes all the new samples and moves them into a new cluster.\\
+
+% main cpp
+%These algorithms are then used for the actual leg detection, which is a combination of lineartibility of time, geometry and tracking.
+%The lineartibility is measured in vectors, where one vector is stamped as one leg. the time and measured time should be connected to how the leg move wit position updates from the scan it will check for covariance and the stamped points. However if the reliability is under zero then the kalman filters are taken in use, %skriv hvorfor når du ved mere om kalman filteret.
+%The geometry is used with tracking to position and detect the legs, where they call on the classifier to use the geometry message. However the tracker is dependent of the distance between each leg, which means it will not track the person if the distance is not correct. If no legs are found but a person has been labelled it will try to find unlabelled legs in proximity of the tracker. For the detection purpose a set of “candidate” clusters will be scanned, for each of these candidates the algorithm finds the closest trackers and add them to a match list. 
+%For a better visualisation the data will then be published, such that reliability and leg/people markers (x,y positions) can be inspected further, as seen in \ref{fig:reliability}

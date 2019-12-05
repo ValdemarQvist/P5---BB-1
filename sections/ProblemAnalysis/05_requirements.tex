@@ -1,0 +1,67 @@
+\chapter{Requirements}\label{ch:reqandlim}
+Part \ref{Part:PA} of the report outlines the problems associated with implementing a social robot in an environment occupied by humans.\\
+\\%previous solutions
+Looking into previously developed solutions in chapter \ref{ch:PrevSol} outlined some of the benefits and issues of implementing such a robotic solution. The research showed that it is not possible to navigate an airport or mall through a single kind of sensor. Such a task would require several different sensors working in collaboration with each other. Furthermore, the social interaction between humans and robots, is an important task. One such interaction is the distance between the robot and the human, especially when the robot is moving between humans. This requires algorithms to navigate in a dynamic environment with humans and other objects that are relevant to safety, such as pets or fragile items from the store.\\
+\\%HRI
+The metrics for determining the performance of a social robot when interacting with humans where summarised in chapter \ref{ch:HRI}.
+These metrics can be used as a guideline for the external design, as well as the behavioural mechanisms of the robot, such as to not keep eye contact with the user for extended periods, as it may cause discomfort. The personal space varies from person to person, but generally conforms to Hall's model, which should be followed when designing social robots.\\
+\\%standards
+To ensure that the social robot is safe to operate in human environments ISO standards where explored in chapter \ref{ch:Standards}.
+ISO 13842 outlines the safety requirements, which the robot must adhere to in order to be safe to operate. This requires a risk assessment of the robot. The standards for such a risk assessment can be found in ISO 12100. The risk assessment will be used to define hazardous aspects, where ISO 13842 presents different aspects to take into consideration. These aspects require proactive measures either in the physical world by designing the robot in a safe fashion or through the control system of the robot.\\
+
+To ensure that the robot fulfils the needs of such a device, a set of requirements must be established to ensure a good experience for all users, both the customer and employer. The general requirement will be listed with a single-digit number and in bold, and then deduced to specific and quantifiable requirements, which will be listed in italics, ordered by topics under the  requirements written in bold.
+
+\newpage
+
+\textbf{1. Must create a positive HRI user experience.}\\
+\hspace*{3mm} 1.1 Must have a intuitive and simple user interface.\\
+\hspace*{9mm}\textit{ - Must be usable without prior training.}\\
+\\
+\hspace*{3mm} 1.2 Must look welcoming and friendly.\\
+\hspace*{9mm}\textit{ - Must be visually compelling to encourage use and create positive connotations \hspace*{13mm}with the robot.}\\
+\\
+\hspace*{3mm} 1.3 Must adhere to social norms.\\
+\hspace*{9mm}\textit{ - Must keep distance to humans to comply with the personal space of 1.2m}.\\
+%\hspace*{9mm}\textit{ - Must make eye contact to show attention, but must not stare, to avoid causing \hspace*{13mm}discomfort.}\\
+        
+\hspace*{3mm} 1.4 Must not cause physical harm.\\
+\hspace*{9mm}\textit{- Must avoid collisions.}\\
+\hspace*{9mm}\textit{- Must operate at safe speeds.}\\
+\hspace*{9mm}\textit{- Must comply with the standards.}\\
+
+\textbf{2. Must be time efficient for customers compared to the traditional shopping \hspace*{5.5mm}method.}\\
+\hspace*{3mm} 2.1 Must help customers locate desired items quicker than without help.\\
+\hspace*{9mm}\textit{- Must be able to navigate a store.}\\
+\hspace*{9mm}\textit{- Must estimate and use shortest routes to designated locations.}\\
+\hspace*{9mm}\textit{- Must have data about item location to remove search time.}\\
+\\
+\textbf{3. Must be cost-efficient for the owners of the companies who facilitate shop-\\\hspace*{4.5mm}ping with the robot.}\\
+\hspace*{3mm} 3.1 Must assist customers without requiring the need of a human employee.\\
+\hspace*{9mm}\textit{- Must be able to navigate a hypermarket and locate multiple chosen items using \hspace*{12mm}path planning.}\\
+\hspace*{9mm}\textit{- Must be able to guide the user to locations of desired wares.}\\
+\hspace*{9mm}\textit{- Must be able to track the user to not lose them.}\\
+
+\hspace*{3mm}{3.2 Must reduce employees' time spent assisting customers, while still ful-\\\hspace*{9mm}filling the same or better level of customer service.}\\
+\hspace*{9mm}\textit{- Must be able to replace human workers in the following areas: Item localisation and 
+\hspace*{12mm}availability of wares in storage.}\\
+\\
+\hspace*{1.5mm} 3.3 Must have the ability to facilitate different levels of additional sales and \hspace*{10.5mm}advertisements.\\
+\hspace*{9mm}\textit{- Must be able to promote and obstruct additional sales through the interface and \hspace*{12mm}path planning.}\\
+
+
+\section{Delimited requirements}\label{sec:delReq}
+Due to project constraints, some of the aforementioned requirements will not be fulfilled in this project. The focus for the remainder of this project will be a prototype that is able to track people.\\
+
+The delimited requirements are an excerpt from the above quantifiable requirements, and as such these requirements determine the scope of this project:
+
+\begin{enumerate}[label=\Roman*.]
+
+    \item Must be able to track the user to not lose them.
+    \item Must keep distance to humans to comply with the personal space of 1.2m.
+    \item Must avoid collisions.
+    \item Must know the location of the different wares.
+    
+\end{enumerate}
+
+\section{Final Problem Formulation}\label{sec:final}
+\textit{Can a system be developed using a mobile robot platform to track humans in a hypermarket?}

@@ -1,0 +1,19 @@
+The motive for distancing is in place and now the robot has to understand personal space. 
+
+\begin{equation} \label{eq:DSZ}
+    F_{DSZ}(x,y) = max(w_3F_{eps}(x,y),w_4F_{sis}(x,y))
+\end{equation}\\
+
+This is an equation for measuring personal space for a robot made by the creators of article: \cite{Truong2016}. This will make the robot calculate the dynamic social zone (DSZ), so that the robot can interact with the people and approach them in an acceptable way. To understand the equation the parameters will be presented:\\
+
+\begin{equation}\label{eq:sis}
+    F_{sis}(x,y) = max(f_1(x,y),...f_M(x,y),...f_1(x,y),...f_K(x,y))
+\end{equation}\\
+
+equation \ref{eq:sis} is the social interaction space where the function f is the basic personal space surrounding a person, \textit{p}, that has the max centre at $(x_{pi},y_{pi})$, which gradually descales the further away it get from the person's space. (x,y) is the coordinate of a cell in a grid map, and M and K is the numbers of human-objects in the robot's proximity.
+
+\begin{equation} \label{eq:eps}
+    F_{eps}(x,y) = max(f^{eps}_1(x,y),...,f^{eps}_N(x,y))
+\end{equation}\\
+
+equation \ref{eq:eps} is the Extended personal space of all humans, which means that it is calculated by adding the weight of the personal space of one person $f^{eps}_1(x,y)$ and adding every persons weight of personal space up to person N. Finally we can find equation \ref{eq:DSZ}, where $w_3 = 1$ and $w_3 = 1$. 

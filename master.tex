@@ -1,0 +1,107 @@
+%Preamble
+\input{setup/preamble.tex}% package inclusion 
+\usepackage{dirtytalk}
+\usepackage{svg}
+\usepackage{amsmath}
+\usepackage{xcolor}
+
+\usepackage{afterpage}
+
+\newcommand\blankpage{%
+   \null
+   \thispagestyle{empty}%
+   \addtocounter{page}{-1}%
+   \newpage}
+%and set up of the document
+\input{setup/hyphenations.tex}% 
+\input{setup/macros.tex}% my new macros
+
+%Tikz for flowcharts:
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+%Start/stop ellipse:
+\tikzstyle{startstop} = [ellipse, minimum width=3.2cm, minimum height=1cm, text centered, text width=2.2cm, draw=black, fill=blue!30]
+
+%\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=2cm, minimum height=1cm,text centered, text width=3cm, draw=black, fill=red!30] 
+
+%Out trapezium:
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1cm, minimum height=1cm, text centered, text width=2.2cm, draw=black, fill=blue!30]
+
+%Process rectangle:
+\tikzstyle{process} = [rectangle, minimum width=6.2cm, minimum height=1cm, text centered, text width=5.2cm, draw=black, fill=orange!30]
+
+%Decision diamond:
+\tikzstyle{decision} = [diamond, minimum width=2cm, minimum height=1cm, text centered, text width=2.5cm, draw=black, fill=green!30]
+
+%Arrows:
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+%Guidebox rectangle:
+\tikzstyle{Guidebox} = [rectangle, minimum width=0cm, minimum height=0cm]
+
+%Caption rectangle:
+\tikzstyle{Caption} = [rectangle, minimum width=0cm, minimum height=0cm, text centered, text width=14.5cm]
+
+%Black dots:
+\tikzstyle{Blackdot} = [circle, minimum width=0.6cm, minimum height=0.6cm, text centered, text width=0.1cm, draw=black, fill=black!200]
+
+%Main Document
+\begin{document}
+    %The preface and title
+    \pagestyle{empty}
+    \pagenumbering{roman}
+    \input{sections/01_frontpage.tex}
+    \input{sections/02_titlepage.tex}
+    \input{sections/03_preface.tex}
+    \input{sections/04_acronyms.tex}
+    \pdfbookmark[0]{Table of Contents}{label:contents}
+    \titlespacing{\chapter}{0.5cm}{1cm}{0.5cm}
+    \setlength\parindent{0em}
+    \begingroup
+        \let\cleardoublepage\clearpage %for removing the empty page before ToC
+        \tableofcontents
+    \endgroup
+    \clearpage
+    
+    %Main part of text
+    \pagestyle{fancy}
+    \pagenumbering{arabic}
+    
+    %Input of Problem Analysis
+    \input{sections/ProblemAnalysis/01_introduction.tex}
+
+    \input{sections/ProblemAnalysis/02_previous_solutions.tex}
+    
+    \input{sections/ProblemAnalysis/03_human_robot_interactions.tex}
+    \input{sections/ProblemAnalysis/04_standards.tex}
+    
+    %\input{sections/ProblemAnalysis/09_final_problem_formulation.tex}
+    \input{sections/ProblemAnalysis/05_requirements.tex}
+   
+   %Input of Problem Solution
+   \input{sections/ProblemSolution/01_IntroProblemSolution.tex}
+   \input{sections/ProblemSolution/02_Sensors.tex}
+   \input{sections/ProblemSolution/02_Turtlebot.tex}
+   \input{sections/ProblemSolution/04_HeightofSensors.tex}
+   \input{sections/ProblemSolution/05_Prototype.tex}
+   
+   \input{sections/ProblemSolution/06_ROS.tex}
+   \input{sections/ProblemSolution/06_TF_package.tex}
+   \input{sections/ProblemSolution/07_FaceDetection.tex}
+   \input{sections/ProblemSolution/08_Leg_detector.tex}
+   \input{sections/ProblemSolution/09_KalmanFilter.tex}
+   \input{sections/ProblemSolution/10_Move_base.tex}
+   \input{sections/ProblemSolution/10_Velocity_controller.tex}
+  
+   \input{sections/ProblemSolution/11_Testing.tex}
+   \input{sections/ProblemSolution/12_Discussion.tex}
+   \input{sections/ProblemSolution/13_Final_conclusion.tex}
+   
+    %Bibliography, sources, references
+    \printbibliography[heading=bibintoc]
+    \label{bib:mybiblio}
+    \input{sections/appendices.tex}
+
+%And finally:
+\end{document}
